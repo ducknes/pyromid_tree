@@ -225,7 +225,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Лабораторная работа №17-19"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Лабораторная работа №17-19 Антонов Илья 21ВП2"))
         self.createQueue.setText(_translate("MainWindow", "Создать очередь"))
         self.clearQueue.setText(_translate("MainWindow", "Очистить очередь"))
         self.takeMax.setText(_translate("MainWindow", "Извлечь наибольший"))
@@ -240,3 +240,19 @@ class Ui_MainWindow(object):
         self.label_5.setText(_translate("MainWindow", "Результат выборки"))
         self.resultView.setSortingEnabled(False)
         self.quit.setText(_translate("MainWindow", "Выход"))
+
+        # self.ui.treeView.setItem(0, 7, QtWidgets.QTableWidgetItem(str(self.treeArray[0])))
+        # self.ui.treeView.setItem(1, 3, QtWidgets.QTableWidgetItem(str(self.treeArray[1])))
+        # self.ui.treeView.setItem(1, 11, QtWidgets.QTableWidgetItem(str(self.treeArray[2])))
+        # self.ui.treeView.setItem(2, 1, QtWidgets.QTableWidgetItem(str(self.treeArray[3])))
+        # self.ui.treeView.setItem(2, 5, QtWidgets.QTableWidgetItem(str(self.treeArray[4])))
+        # self.ui.treeView.setItem(2, 9, QtWidgets.QTableWidgetItem(str(self.treeArray[5])))
+        # self.ui.treeView.setItem(2, 13, QtWidgets.QTableWidgetItem(str(self.treeArray[6])))
+        # self.ui.treeView.setItem(3, 0, QtWidgets.QTableWidgetItem(str(self.treeArray[7])))
+        # self.ui.treeView.setItem(3, 2, QtWidgets.QTableWidgetItem(str(self.treeArray[8])))
+        # self.ui.treeView.setItem(3, 4, QtWidgets.QTableWidgetItem(str(self.treeArray[9])))
+        # self.ui.treeView.setItem(3, 6, QtWidgets.QTableWidgetItem(str(self.treeArray[10])))
+        # self.ui.treeView.setItem(3, 8, QtWidgets.QTableWidgetItem(str(self.treeArray[11])))
+        # self.ui.treeView.setItem(3, 10, QtWidgets.QTableWidgetItem(str(self.treeArray[12])))
+        # self.ui.treeView.setItem(3, 12, QtWidgets.QTableWidgetItem(str(self.treeArray[13])))
+        # self.ui.treeView.setItem(3, 14, QtWidgets.QTableWidgetItem(str(self.treeArray[14])))

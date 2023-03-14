@@ -19,7 +19,7 @@ class Tree(QtWidgets.QMainWindow):
         self.ui.quit.clicked.connect(QtWidgets.QApplication.instance().quit)
     
     def createArray(self):
-        if len(self.treeArray) != 0:
+        if len(self.treeArray) >= 1:
             QtWidgets.QMessageBox.about(self, "Ошибка!", "Очередь уже создана")
             return
         
@@ -52,9 +52,6 @@ class Tree(QtWidgets.QMainWindow):
         if len(self.treeArray) == 0:
             QtWidgets.QMessageBox.about(self, "Ошибка!", "Очередь уже очищена")
             return
-        
-        # for i in range(len(self.treeArray)):
-        #     self.ui.arrayView.setItem(0, i, QtWidgets.QTableWidgetItem(str("")))
 
         self.ui.arrayView.clear()
         self.ui.treeView.clear()
