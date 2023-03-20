@@ -58,6 +58,12 @@ class Tree(QtWidgets.QMainWindow):
         
         self.treeArray.clear()
 
+    def fixUp(self):
+        k = len(self.treeArray)
+        while k > 1 and self.treeArray[k / 2] < self.treeArray[k]:
+            self.treeArray[k], self.treeArray[k / 2] = self.treeArray[k / 2], self.treeArray[k]
+            k //= 2
+        
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
