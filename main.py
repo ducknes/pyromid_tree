@@ -111,11 +111,14 @@ class Tree(QtWidgets.QMainWindow):
         if self.current_size == 0:
             QtWidgets.QMessageBox.about(self, "Ошибка!", "Очередь пуста")
             return
+        
+        valueTo = self.ui.spinPrirTo.value()
+        valueFrom = self.ui.spinPrirFrom.value()
 
         for i in range(1, len(self.treeArray)):
-            if self.treeArray[i] == self.ui.spinPrirFrom.value():
-                self.treeArray[i] = self.ui.spinPrirTo.value()
-                if self.ui.spinPrirFrom.value() > self.ui.spinPrirTo.value():
+            if self.treeArray[i] == valueFrom:
+                self.treeArray[i] = valueTo
+                if valueFrom > valueTo:
                     self.fixDown(i)
                 else:
                     self.fixUp(i)
