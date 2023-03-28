@@ -90,9 +90,9 @@ class Tree(QtWidgets.QMainWindow):
             QtWidgets.QMessageBox.about(self, "Ошибка!", "Очередь пуста")
             return
         
-        tree_array_max = max(self.treeArray)
-        self.resultArray.append(tree_array_max)
-        self.treeArray[1] = 0
+        self.resultArray.append(self.treeArray[1])
+        self.treeArray[1] = self.treeArray[self.current_size]
+        self.treeArray[self.current_size] = 0
         self.fixDown(1)
         self.printArray()
         self.current_size -= 1
@@ -100,14 +100,12 @@ class Tree(QtWidgets.QMainWindow):
     def add_new(self):
         if self.current_size == 15:
             QtWidgets.QMessageBox.about(self, "Ошибка!", "Очередь заполнена")
+            return
 
-        for i in range(len(self.treeArray) - 1, 0, -1):
-            if self.treeArray[i] == 0:
-                self.treeArray[i] = self.ui.spinNew.value()
-                self.current_size += 1
-                self.fixUp(i)
-                self.printArray()
-                return
+        self.treeArray[self.current_size + 1] = self.ui.spinNew.value()
+        self.fixUp(self.current_size)
+        self.current_size += 1
+        self.printArray()
 
     def change_priority(self):
         if self.current_size == 0:
@@ -117,8 +115,10 @@ class Tree(QtWidgets.QMainWindow):
         for i in range(1, len(self.treeArray)):
             if self.treeArray[i] == self.ui.spinPrirFrom.value():
                 self.treeArray[i] = self.ui.spinPrirTo.value()
-                self.fixUp(i)
-                self.fixDown(i)
+                if self.ui.spinPrirFrom.value() > self.ui.spinPrirTo.value():
+                    self.fixDown(i)
+                else:
+                    self.fixUp(i)
                 self.printArray()
                 return
 
